@@ -77,6 +77,7 @@ INSERT INTO contacts VALUES (5,'Pratik','gandhi','pratikgandhi901@gmail.com','95
 
 --Select from contacts
 
+
 SELECT 
     * 
 FROM
