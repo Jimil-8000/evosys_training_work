@@ -534,6 +534,22 @@ ORDER BY
 --- 18.3 Dis empno,ename,deptno, for emp earning greater than any from emp of dept 30
 --1. emp details
 SELECT 
-    empno,ename,deptno
+    empno,ename,deptno,sal
 FROM 
     emp
+WHERE
+    sal > ANY(SELECT sal FROM emp WHERE deptno=30) 
+    AND
+    deptno <> 30
+ORDER BY
+    sal;
+    
+-----
+SELECT 
+    empno,ename,deptno,sal
+FROM 
+    emp
+WHERE
+    sal > ALL(SELECT sal FROM emp WHERE deptno=30) 
+ORDER BY
+    sal;
