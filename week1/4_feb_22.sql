@@ -1,0 +1,45 @@
+SELECT * FROM EMP;
+
+--DROP TAB;E EMP_DUMMY
+--CREATE A COPY OD EMP IN ADHR DB CONNECTION INSTANT
+--CREATE TABLE <TABLE_NAME> (COL_NAMES <DATA TYPES>)
+
+--BELOW QUERY OPNLY COPIES THE DATA AND COLUMN DECSRIPTIOPN 
+--COPY STRUCTURE AND DATA OD THE ORIGINAL TABLE BUT SKIPS THE CONSTRAINS
+
+
+CREATE TABLE EMP_DUMMY
+AS
+    SELECT * FROM EMP;
+    
+    
+SELECT *  FROM emp_dummy;
+
+--LETS DO DML OPRATION
+
+DELETE FROM emp_dummy; -- SIMPLE QUERY DELETING ALL RECCORDS FROM EMP DUMMY
+ROLLBACK;
+
+--##################################################################
+--INSERT
+--DELETE 
+--UPDATE 
+--##################################################################
+
+INSERT INTO 
+    emp_dummy 
+VALUES
+    (?,?,?,?,?,?,?)
+    
+--UDPATE 
+UPDATE  
+    emp_dummy
+SET 
+    COMM = .01
+WHERE
+    COMM  IS NULL;
+    
+    ROLLBACK;
+SELECT * FROM emp_dummy;
+
+--HOW TO CREAT E TABLE USING CREATE TABLE <>
